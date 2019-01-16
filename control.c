@@ -411,7 +411,7 @@ float Kalman_Filter(float angle_m,float gyro_m)
   return x;
 }
 
-//*********************************南京师范大学开源***************************
+//*********************************南***大学开源***************************
 
 void AngleControl(void)
 {
@@ -582,7 +582,7 @@ void Speedcontrol(void)
 
   SpeedControlOutNew    =       SpeedControlOutOld*0.9+SpeedControlOutNew*0.1;
 
-  /*-----------------------------------------南师大开源转向参数-----------------------------------------*/
+  /*-----------------------------------------南***大学开源转向参数-----------------------------------------*/
 
   if((SetSpeedMax!=0))
   {
@@ -644,9 +644,9 @@ void SpeedControlOutput(void)
   float fvalue,fDvalue,ERROR,fDvalue_exper1,fDvalue_exper2;
 void DirectionControl(void)
 {
-  /*****************************************************南师大开源转向函数*********************************/
+  /*****************************************************南***大学开源转向函数*********************************/
 
-  //      此处 转向参数更新 移动到 速度控制 中
+ 
 
   GyroXo=GyroX;
   GyroX=mpu6050_read_gZ()+4;
@@ -663,7 +663,7 @@ void DirectionControl(void)
 
   Gyroroll=Gyroroll*0.7+GyrorollOld[0]*0.3; //滤波 5.18
 
-  GyrorollOld[0]=Gyroroll;                     //没用到
+  GyrorollOld[0]=Gyroroll;                  
 
 
   g_fDirectionControlOutOld = g_fDirectionControlOutNew;
@@ -682,7 +682,7 @@ void DirectionControl(void)
   fvalueNew = fvalue;
   ERROR=fvalueNew - fvalueOld;                //与上一次求偏差
   ERROR = ERROR*20;
-  //强无敌的模糊控制，上三米指日可待
+  //模糊控制
 
   error_d=ERROR;
   error_d = (error_d>= 32? 32:error_d);	//偏差限幅
@@ -1011,7 +1011,7 @@ void OLED_Draw_UI()  //OLED调参
     while(PTC6_IN==0);//直到按键松开再运行
   }
 
-  /*************************参量+数值选择***********************************修改********/
+  /*************************参量+数值选择***********************/
   /*
   Page_Index页面序号
   Para_Index0~6的行序号
